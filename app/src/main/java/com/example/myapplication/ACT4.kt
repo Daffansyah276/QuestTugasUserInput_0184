@@ -154,6 +154,33 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     )
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_small)))
 
+                    Row(modifier = Modifier.fillMaxWidth()) {
+                        OutlinedTextField(
+                            value = textTanggalLahir,
+                            singleLine = true,
+                            readOnly = true,
+                            shape = RoundedCornerShape(dimensionResource(id = R.dimen.radius_textfield)),
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(end = 6.dp),
+                            label = {
+                                Text(
+                                    stringResource(id = R.string.date_birth),
+                                    fontSize = dimensionResource(id = R.dimen.font_label).value.sp
+                                )
+                            },
+                            trailingIcon = {
+                                IconButton(onClick = { showDatePicker = true }) {
+                                    Icon(
+                                        painter = painterResource(id = android.R.drawable.ic_menu_my_calendar),
+                                        contentDescription = stringResource(id = R.string.desc_pick_date),
+                                        tint = Color.Gray
+                                    )
+                                }
+                            },
+                            onValueChange = { }
+                        )
+                    }
                 }
             }
         }
