@@ -32,7 +32,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
     var textNamaBelakang by remember { mutableStateOf("") }
     var textEmail by remember { mutableStateOf("") }
     var textTanggalLahir by remember { mutableStateOf("") }
-
+    var textPengalaman by remember { mutableStateOf("") }
 
 
 }
