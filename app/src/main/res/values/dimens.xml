@@ -1,2 +1,7 @@
 <resources>
+    <dimen name="padding_screen_horizontal">20dp</dimen>
+    <dimen name="padding_form_vertical">24dp</dimen>
+    <dimen name="padding_card_result">16dp</dimen>
+
+
 </resources>
