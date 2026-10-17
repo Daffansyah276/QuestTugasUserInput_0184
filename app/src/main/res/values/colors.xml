@@ -19,4 +19,5 @@
     <color name="result_bg">#CFD8DC</color>
     <color name="result_card_bg">#1E1E1E</color>
 
+    <color name="disabled_btn_bg">#E0E0E0</color>
 </resources>
