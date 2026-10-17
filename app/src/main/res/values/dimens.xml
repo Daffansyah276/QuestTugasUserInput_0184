@@ -11,4 +11,8 @@
     <dimen name="radius_textfield">12dp</dimen>
     <dimen name="radius_button">12dp</dimen>
 
+    <dimen name="height_button">48dp</dimen>
+    <dimen name="height_menu_button">42dp</dimen>
+
+
 </resources>
