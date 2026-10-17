@@ -163,12 +163,7 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                             modifier = Modifier
                                 .weight(1f)
                                 .padding(end = 6.dp),
-                            label = {
-                                Text(
-                                    stringResource(id = R.string.date_birth),
-                                    fontSize = dimensionResource(id = R.dimen.font_label).value.sp
-                                )
-                            },
+                            label = { Text(stringResource(id = R.string.date_birth), fontSize = dimensionResource(id = R.dimen.font_label).value.sp) },
                             trailingIcon = {
                                 IconButton(onClick = { showDatePicker = true }) {
                                     Icon(
@@ -180,7 +175,42 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                             },
                             onValueChange = { }
                         )
+
+                        ExposedDropdownMenuBox(
+                            expanded = expandedPengalaman,
+                            onExpandedChange = { expandedPengalaman = !expandedPengalaman },
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(start = 6.dp)
+                        ) {
+                            OutlinedTextField(
+                                value = textPengalaman,
+                                singleLine = true,
+                                readOnly = true,
+                                shape = RoundedCornerShape(dimensionResource(id = R.dimen.radius_textfield)),
+                                modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryEditable, true),
+                                label = { Text(stringResource(id = R.string.experience), fontSize = dimensionResource(id = R.dimen.font_label).value.sp) },
+                                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedPengalaman) },
+                                onValueChange = { }
+                            )
+                            ExposedDropdownMenu(
+                                expanded = expandedPengalaman,
+                                onDismissRequest = { expandedPengalaman = false }
+                            ) {
+                                opsiPengalaman.forEach { opsi ->
+                                    DropdownMenuItem(
+                                        text = { Text(opsi, fontSize = dimensionResource(id = R.dimen.font_label).value.sp) },
+                                        onClick = {
+                                            textPengalaman = opsi
+                                            expandedPengalaman = false
+                                        }
+                                    )
+                                }
+                            }
+                        }
                     }
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
+
                 }
             }
         }
