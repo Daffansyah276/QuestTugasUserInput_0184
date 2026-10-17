@@ -38,4 +38,9 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
     var isUiUxChecked by remember { mutableStateOf(false) }
     var isWebChecked by remember { mutableStateOf(false) }
 
+    var expandedPengalaman by remember { mutableStateOf(false) }
+    val opsiPengalaman = listOf("0-1 tahun", "1-3 tahun", "3-5 tahun")
+    var showDatePicker by remember { mutableStateOf(false) }
+    val datePickerState = rememberDatePickerState()
+
 }
