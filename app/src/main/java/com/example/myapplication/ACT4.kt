@@ -323,6 +323,28 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_large)))
                 }
 
+                // Pilih Tanggal Lahir
+                if (showDatePicker) {
+                    DatePickerDialog(
+                        onDismissRequest = { showDatePicker = false },
+                        confirmButton = {
+                            TextButton(
+                                onClick = {
+                                    showDatePicker = false
+                                    val selectedDateMillis = datePickerState.selectedDateMillis
+                                    if (selectedDateMillis != null) {
+                                        val formatter = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                                        textTanggalLahir = formatter.format(Date(selectedDateMillis))
+                                    }
+                                }
+                            ) { Text(stringResource(id = R.string.dialog_ok)) }
+                        },
+                        dismissButton = {
+                            TextButton(onClick = { showDatePicker = false }) { Text(stringResource(id = R.string.dialog_cancel)) }
+                        }
+                    ) {
+                        DatePicker(state = datePickerState)
+                    }
                 }
             }
         }
