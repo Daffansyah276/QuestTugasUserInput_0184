@@ -91,6 +91,36 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                 bottomEnd = 0.dp
             ),
             colors = CardDefaults.cardColors(containerColor = colorResource(id = R.color.card_background))
-        )
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState()),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = dimensionResource(id = R.dimen.padding_screen_horizontal))
+                        .padding(top = dimensionResource(id = R.dimen.padding_form_vertical)),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.title_biodata),
+                        color = colorResource(id = R.color.purple_primary),
+                        fontSize = dimensionResource(id = R.dimen.font_title).value.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_small)))
+                    Text(
+                        text = stringResource(id = R.string.subtitle_form_biodata),
+                        color = colorResource(id = R.color.text_subtitle),
+                        fontSize = dimensionResource(id = R.dimen.font_subtitle).value.sp
+                    )
+
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
+
+                }
+        }
     }
 }
