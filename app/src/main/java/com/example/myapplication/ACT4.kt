@@ -211,6 +211,74 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     }
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
 
+                    //  Skill
+                    Text(
+                        text = stringResource(id = R.string.choose_skills),
+                        modifier = Modifier.fillMaxWidth(),
+                        fontWeight = FontWeight.Bold,
+                        fontSize = dimensionResource(id = R.dimen.font_label).value.sp,
+                        color = Color.Black
+                    )
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(checked = isAndroidChecked, onCheckedChange = { isAndroidChecked = it })
+                            Text(text = stringResource(id = R.string.android), fontSize = dimensionResource(id = R.dimen.font_label).value.sp)
+                        }
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(checked = isUiUxChecked, onCheckedChange = { isUiUxChecked = it })
+                            Text(text = stringResource(id = R.string.ui_ux), fontSize = dimensionResource(id = R.dimen.font_label).value.sp)
+                        }
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Checkbox(checked = isWebChecked, onCheckedChange = { isWebChecked = it })
+                            Text(text = stringResource(id = R.string.web), fontSize = dimensionResource(id = R.dimen.font_label).value.sp)
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_large)))
+                    Button(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(dimensionResource(id = R.dimen.height_button)),
+                        enabled = textNamaDepan.isNotEmpty() &&
+                                textNamaBelakang.isNotEmpty() &&
+                                textEmail.isNotEmpty() &&
+                                textTanggalLahir.isNotEmpty() &&
+                                textPengalaman.isNotEmpty(),
+                        shape = RoundedCornerShape(dimensionResource(id = R.dimen.radius_button)),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = colorResource(id = R.color.blue),
+                            disabledContainerColor = colorResource(id = R.color.disabled_btn_bg)
+                        ),
+                        onClick = {
+                            namaDepan = textNamaDepan
+                            namaBelakang = textNamaBelakang
+                            email = textEmail
+                            tanggalLahir = textTanggalLahir
+                            pengalaman = textPengalaman
+
+                            val selectedSkills = mutableListOf<String>()
+                            if (isAndroidChecked) selectedSkills.add("Android")
+                            if (isUiUxChecked) selectedSkills.add("UI/UX")
+                            if (isWebChecked) selectedSkills.add("Web")
+                            skills = if (selectedSkills.isNotEmpty()) selectedSkills.joinToString(", ") else "-"
+
+                            isProceedClicked = true
+                        }
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.proceed),
+                            fontSize = dimensionResource(id = R.dimen.font_button).value.sp,
+                            color = Color.White
+                        )
+                    }
+                }
+
+
                 }
             }
         }
