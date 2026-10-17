@@ -120,7 +120,40 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
 
                     Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_medium)))
 
+                    Row(modifier = Modifier.fillMaxWidth()) {
+                        OutlinedTextField(
+                            value = textNamaDepan,
+                            singleLine = true,
+                            shape = RoundedCornerShape(dimensionResource(id = R.dimen.radius_textfield)),
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(end = 6.dp),
+                            label = {
+                                Text(
+                                    stringResource(id = R.string.first_name),
+                                    fontSize = dimensionResource(id = R.dimen.font_label).value.sp
+                                )
+                            },
+                            onValueChange = { textNamaDepan = it }
+                        )
+                        OutlinedTextField(
+                            value = textNamaBelakang,
+                            singleLine = true,
+                            shape = RoundedCornerShape(dimensionResource(id = R.dimen.radius_textfield)),
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(start = 6.dp),
+                            label = {
+                                Text(
+                                    stringResource(id = R.string.last_name),
+                                    fontSize = dimensionResource(id = R.dimen.font_label).value.sp
+                                )
+                            },
+                            onValueChange = { textNamaBelakang = it }
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_small)))
                 }
-        }
+        }   }
     }
 }
