@@ -51,5 +51,9 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
     var skills by remember { mutableStateOf("") }
     var isProceedClicked by remember { mutableStateOf(false) }
 
-
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color.White)
+    )
 }
