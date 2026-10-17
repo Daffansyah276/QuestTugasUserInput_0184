@@ -43,4 +43,13 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
     var showDatePicker by remember { mutableStateOf(false) }
     val datePickerState = rememberDatePickerState()
 
+    var namaDepan by remember { mutableStateOf("") }
+    var namaBelakang by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var tanggalLahir by remember { mutableStateOf("") }
+    var pengalaman by remember { mutableStateOf("") }
+    var skills by remember { mutableStateOf("") }
+    var isProceedClicked by remember { mutableStateOf(false) }
+
+
 }
