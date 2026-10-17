@@ -55,5 +55,30 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
         modifier = modifier
             .fillMaxSize()
             .background(Color.White)
-    )
-}
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.fotogua),
+            contentDescription = stringResource(id = R.string.desc_background),
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(0.35f)
+                .align(Alignment.TopCenter),
+            contentScale = ContentScale.Crop
+        )
+        IconButton(
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(start = 20.dp, top = 36.dp)
+                .background(Color.White, shape = CircleShape)
+                .size(dimensionResource(id = R.dimen.height_menu_button)),
+            onClick = { }
+        ) {
+            Icon(
+                painter = painterResource(id = android.R.drawable.ic_menu_sort_by_size),
+                contentDescription = stringResource(id = R.string.desc_menu),
+                tint = Color.Gray
+            )
+        }
+
+    }
+        }
