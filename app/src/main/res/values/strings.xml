@@ -15,4 +15,8 @@
     <string name="ui_ux">UI/UX</string>
     <string name="web">Web</string>
 
+    <string name="proceed">Proceed</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Batal</string>
+
 </resources>
