@@ -3,5 +3,9 @@
     <dimen name="padding_form_vertical">24dp</dimen>
     <dimen name="padding_card_result">16dp</dimen>
 
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+
 
 </resources>
