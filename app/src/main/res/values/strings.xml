@@ -26,4 +26,7 @@
     <string name="result_email">Email</string>
     <string name="result_skills">Skill</string>
 
+    <string name="desc_background">Background Banner</string>
+    <string name="desc_menu">Menu</string>
+    <string name="desc_pick_date">Pilih Tgl</string>
 </resources>
