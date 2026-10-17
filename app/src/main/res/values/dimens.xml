@@ -14,5 +14,10 @@
     <dimen name="height_button">48dp</dimen>
     <dimen name="height_menu_button">42dp</dimen>
 
-
+    <dimen name="font_title">22sp</dimen>
+    <dimen name="font_subtitle">12sp</dimen>
+    <dimen name="font_label">14sp</dimen>
+    <dimen name="font_button">16sp</dimen>
+    <dimen name="font_result_title">16sp</dimen>
+    <dimen name="font_result_body">13sp</dimen>
 </resources>
