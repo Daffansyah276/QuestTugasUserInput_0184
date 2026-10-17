@@ -79,6 +79,18 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                 tint = Color.Gray
             )
         }
-
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(0.75f)
+                .align(Alignment.BottomCenter),
+            shape = RoundedCornerShape(
+                topStart = dimensionResource(id = R.dimen.radius_card_main),
+                topEnd = dimensionResource(id = R.dimen.radius_card_main),
+                bottomStart = 0.dp,
+                bottomEnd = 0.dp
+            ),
+            colors = CardDefaults.cardColors(containerColor = colorResource(id = R.color.card_background))
+        )
     }
-        }
+}
