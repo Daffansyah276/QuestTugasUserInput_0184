@@ -278,6 +278,50 @@ fun FormDataDiri(modifier: Modifier = Modifier) {
                     }
                 }
 
+                if (isProceedClicked) {
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_large)))
+
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(colorResource(id = R.color.result_bg))
+                            .padding(
+                                horizontal = dimensionResource(id = R.dimen.padding_screen_horizontal),
+                                vertical = dimensionResource(id = R.dimen.padding_card_result)
+                            )
+                    ) {
+                        ElevatedCard(
+                            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+                            colors = CardDefaults.cardColors(containerColor = colorResource(id = R.color.result_card_bg)),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(dimensionResource(id = R.dimen.padding_card_result))
+                            ) {
+                                Text(
+                                    text = stringResource(id = R.string.result_title),
+                                    color = colorResource(id = R.color.light_blue),
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = dimensionResource(id = R.dimen.font_result_title).value.sp
+                                )
+                                Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_small)))
+
+                                Text(text = "• " + stringResource(id = R.string.result_name) + " : " + namaDepan + " " + namaBelakang, color = Color.White, fontSize = dimensionResource(id = R.dimen.font_result_body).value.sp)
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(text = "• " + stringResource(id = R.string.result_date_birth) + " : " + tanggalLahir, color = Color.White, fontSize = dimensionResource(id = R.dimen.font_result_body).value.sp)
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(text = "• " + stringResource(id = R.string.result_experience) + " : " + pengalaman, color = Color.White, fontSize = dimensionResource(id = R.dimen.font_result_body).value.sp)
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(text = "• " + stringResource(id = R.string.result_email) + " : " + email, color = Color.White, fontSize = dimensionResource(id = R.dimen.font_result_body).value.sp)
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(text = "• " + stringResource(id = R.string.result_skills) + " : " + skills, color = Color.White, fontSize = dimensionResource(id = R.dimen.font_result_body).value.sp)
+                            }
+                        }
+                    }
+                    Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.spacing_large)))
+                }
 
                 }
             }
